@@ -1,7 +1,7 @@
 import Paper from '@material-ui/core/Paper';
-import React, {ChangeEvent, FC, useReducer, useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import './App.css';
-import {ActionType, ArrOptionsType, InitialStateType} from "./types";
+import {ArrOptionsType} from "./types";
 
 
 

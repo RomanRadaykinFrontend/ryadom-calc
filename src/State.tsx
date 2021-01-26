@@ -1,4 +1,4 @@
-import {ArrOptionsType, InitialStateType} from "./types";
+import {InitialStateType} from "./types";
 
 export let initialState: InitialStateType = {
     floors: {
