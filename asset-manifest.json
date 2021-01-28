@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ryadom-calc/static/css/main.a3905ee8.chunk.css",
-    "main.js": "/ryadom-calc/static/js/main.43a7729c.chunk.js",
-    "main.js.map": "/ryadom-calc/static/js/main.43a7729c.chunk.js.map",
+    "main.css": "/ryadom-calc/static/css/main.81238184.chunk.css",
+    "main.js": "/ryadom-calc/static/js/main.e7363bb7.chunk.js",
+    "main.js.map": "/ryadom-calc/static/js/main.e7363bb7.chunk.js.map",
     "runtime-main.js": "/ryadom-calc/static/js/runtime-main.362bfcd9.js",
     "runtime-main.js.map": "/ryadom-calc/static/js/runtime-main.362bfcd9.js.map",
     "static/js/2.9db297bd.chunk.js": "/ryadom-calc/static/js/2.9db297bd.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.5f58abc6.chunk.js": "/ryadom-calc/static/js/3.5f58abc6.chunk.js",
     "static/js/3.5f58abc6.chunk.js.map": "/ryadom-calc/static/js/3.5f58abc6.chunk.js.map",
     "index.html": "/ryadom-calc/index.html",
-    "static/css/main.a3905ee8.chunk.css.map": "/ryadom-calc/static/css/main.a3905ee8.chunk.css.map",
+    "static/css/main.81238184.chunk.css.map": "/ryadom-calc/static/css/main.81238184.chunk.css.map",
     "static/js/2.9db297bd.chunk.js.LICENSE.txt": "/ryadom-calc/static/js/2.9db297bd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.362bfcd9.js",
     "static/js/2.9db297bd.chunk.js",
-    "static/css/main.a3905ee8.chunk.css",
-    "static/js/main.43a7729c.chunk.js"
+    "static/css/main.81238184.chunk.css",
+    "static/js/main.e7363bb7.chunk.js"
   ]
 }
