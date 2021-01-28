@@ -132,5 +132,5 @@ export let initialState: InitialStateType = {
         ],
         filterCount: 0,
         name: 'Монтаж фильтра под мойку'
-    }
+    },
 };

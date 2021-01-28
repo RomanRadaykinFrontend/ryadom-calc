@@ -1,14 +1,15 @@
 import React, {ChangeEvent} from 'react';
 import './App.css';
-import {ArrOptionsType} from "./types";
+import {ActionType, ArrOptionsType} from "./types";
 import Paper from "@material-ui/core/Paper";
 
 
 type SelectComponentType = {
     optionArray: Array<ArrOptionsType>
-    changeCount: any
+    dispatch: (action: ActionType) => void
     actionType: string
     name: string
+    img?: string
 }
 
 function SelectComponent(props: SelectComponentType) {
@@ -19,7 +20,7 @@ function SelectComponent(props: SelectComponentType) {
 
 
     const onFuncCallback = (e: ChangeEvent<HTMLSelectElement>) => {
-        props.changeCount({type: props.actionType, count: +e.currentTarget.value})
+        props.dispatch({type: props.actionType, count: +e.currentTarget.value})
     };
 
 
@@ -34,6 +35,9 @@ function SelectComponent(props: SelectComponentType) {
                         {options}
                     </select>
                 </div>
+                {props.img && <div className={'imgWrapper'}>
+                    <img src={props.img} alt="image_icon" style={{width: '70px', height: 'auto'}}/>
+                </div>}
             </Paper>
         </div>
     )

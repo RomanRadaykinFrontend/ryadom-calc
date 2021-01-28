@@ -1,8 +1,12 @@
 .App{
-    display: grid;
-    grid-template-columns: 2fr 2fr 1fr ;
-    grid-gap: 20px;
+
+
     margin: 0 auto
+}
+.categoriesWrap{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-gap: 20px;
 }
 
 .selectWithNumber, .selectComponent, .selectWithCheckbox {
@@ -12,6 +16,18 @@
 .metersInput{
     width: 30px;
 }
+.errorMetersInput{
+    width: 30px;
+    background-color: indianred;
+}
+
+.errorDivSpan{
+    margin-top: 10px;
+    color: red;
+    font-weight: bold;
+    font-size: 12px;
+}
+
 select{
     width:150px;
 }
@@ -28,3 +44,9 @@ button{
     width: 100%;
     height: 50px;
 }
+
+.imgWrapper{
+    display: flex;
+    align-self: center;
+}
+

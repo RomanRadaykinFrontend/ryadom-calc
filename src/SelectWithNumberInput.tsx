@@ -1,15 +1,16 @@
 import Paper from '@material-ui/core/Paper';
 import React, {ChangeEvent, useState} from 'react';
 import './App.css';
-import {ArrOptionsType} from "./types";
-
+import {ActionType, ArrOptionsType} from "./types";
+//import fartuk from './img/fartuk.jpg'
 
 
 type SelectWithNumberType = {
     optionArray: Array<ArrOptionsType>
-    changeCount: any
+    dispatch: (action: ActionType) => void
     actionType: string
     name: string
+    img?: string
 }
 
 function SelectWithNumber(props: SelectWithNumberType) {
@@ -23,37 +24,58 @@ function SelectWithNumber(props: SelectWithNumberType) {
     })
 
     const onChangeMeters = (e: ChangeEvent<HTMLInputElement>) => {
-        setValue(+e.currentTarget.value)
+            setValue(+e.currentTarget.value)
+
         if (refSelect.current) {
-            props.changeCount({type: props.actionType, count: +refSelect.current.value * +e.currentTarget.value})
+            if(+e.currentTarget.value >= 0){
+                props.dispatch({type: props.actionType, count: +refSelect.current.value * +e.currentTarget.value})
+            } else {
+                props.dispatch({type: props.actionType, count: 0})
+            }
         }
     }
 
     const onFuncCallback = (e: ChangeEvent<HTMLSelectElement>) => {
         if (refInput.current) {
-            props.changeCount({type: props.actionType, count: +e.currentTarget.value * +refInput.current.value})
+            if(+refInput.current.value >= 0){
+                props.dispatch({type: props.actionType, count: +e.currentTarget.value * +refInput.current.value})
+            } else {
+                props.dispatch({type: props.actionType, count: 0})
+            }
+
         }
     }
 
 
     return (
         <div className={'selectWithNumber'}>
-            <Paper elevation={10} style={{padding: "15px"}}>
+            <Paper elevation={10} style={{padding: "15px", display: 'flex', justifyContent: 'space-between'}}>
                 <div>
-                    <h3>{props.name}:</h3>
+                    <div>
+                        <h3>{props.name}:</h3>
+                    </div>
+                    <div>
+                        <select onChange={onFuncCallback} ref={refSelect}>
+                            {options}
+                        </select>
+                    </div>
+                    <div>
+                        <h3>Количество погонных метров:</h3>
+                    </div>
+                    <div>
+                        <input className={value < 0 ? 'errorMetersInput' :'metersInput'} type={'number'} onChange={onChangeMeters} value={value}
+                               ref={refInput}/>
+                        {
+                            value < 0 && <div className={'errorDivSpan'}>
+                                <span>Количество метров не может быть отрицательным!</span>
+                            </div>
+                        }
+                    </div>
                 </div>
-                <div>
-                    <select onChange={onFuncCallback} ref={refSelect}>
-                        {options}
-                    </select>
-                </div>
-                <div>
-                    <h3>Количество погонных метров:</h3>
-                </div>
-                <div>
-                    <input className={'metersInput'} type={'number'} onChange={onChangeMeters} value={value}
-                           ref={refInput}/>
-                </div>
+                {props.img && <div className={'imgWrapper'}>
+                    <img src={props.img} alt="image_icon" style={{width: '80px', height: 'auto'}}/>
+                </div>}
+
             </Paper>
         </div>
     )
